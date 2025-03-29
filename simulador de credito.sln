@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "simulador de credito", "simulador de credito\", "{30410569-DAD3-DD90-5EC2-8B9690C8EBD3}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58403"
+		Debug.AspNetCompiler.PhysicalPath = "simulador de credito\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58403\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58403"
+		Release.AspNetCompiler.PhysicalPath = "simulador de credito\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58403\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58403"
+		SlnRelativePath = "simulador de credito\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30410569-DAD3-DD90-5EC2-8B9690C8EBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30410569-DAD3-DD90-5EC2-8B9690C8EBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A736AD9A-0D8D-493B-9A45-4D554D0743B9}
+	EndGlobalSection
+EndGlobal
