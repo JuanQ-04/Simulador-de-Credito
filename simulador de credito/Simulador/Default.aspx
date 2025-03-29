@@ -37,57 +37,60 @@
 		<td align="center" valign="middle" style="color:Black;font-size:XX-Large;font-weight:bold;">Plan de Pagos</td>
 	</tr>
 </table>
-            <% 
-            int valorPrestamo = 1000000;
-            int numeroDeCuotas = 48;
-            %>
-        <br />
+        <% 
+        int valorPrestamo = 1000000;
+        int numeroDeCuotas = 48;
+        %>
         <table id="ComentariosDePagos">
 	<tr>
-		<td style="font-size:X-Large;">Plan de pagos para para el crédito de libre inversión de $<span id="valorPrestamo"></span> pagando a <span id="numeroDeCuotas"></span> cuotas</td>
+		<td style="font-size:X-Large;">Plan de pagos para para el crédito de libre inversión de $<span class="text-black" id="valorPrestamo"></span> pagando a <span id="numeroDeCuotas"></span> cuotas</td>
 	</tr><tr>
 		<td style="font-size:Small;">Resultados aproximados y sujetos a estudio de crédito y políticas de la entidad.</td>
 	</tr>
 </table>
 <br />
         <table id="PagosDetalladosMensual" style="width:359px;" border= "1">
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <tr>
-            <% for (int i = 1; i <= numeroDeCuotas; i++) { %>
+            <% 
+            double abonoInteres = 0;
+            double abonoCapital = 0;
+            double seguroDeVida = 1393;
+            double interesMensual = 0.0178;
+            double cuotaMensual = valorPrestamo * ((interesMensual * Math.Pow(1 + interesMensual, numeroDeCuotas)) / (Math.Pow(1 + interesMensual, numeroDeCuotas) - 1));
+            double saldoRestante = valorPrestamo;
+            for (int i = 1; i <= numeroDeCuotas; i++) { 
+            abonoInteres = Math.Round(saldoRestante * interesMensual);
+            abonoCapital = Math.Round(cuotaMensual - abonoInteres);
+            %>
             <td class="auto-style1">
             <div class="bg-white border rounded-lg p-4 shadow-sm">
                 <div class="flex justify-between items-center mb-4">
                     <table>
                         <tr>
                             <th class="auto-style2"><h3 class="text-lg font-semibold">Mes <%= i %></h3></th>
-                            <th><p class="text-gray-600">Cuota mensual<br /> <span class="text-black">$ 32,552</span></p></th>
+                            <th><p class="text-gray-600">Cuota mensual<br /> <span class="text-black">$ <%= Math.Round(cuotaMensual + seguroDeVida)%></span></p></th>
                         </tr></table>
                 </div>
                 <table>
                     <tr>
                         <th>
-                            <p class="text-gray-600"><strong>Abono intereses: </strong>
+                            <p class="text-gray-600">Abono intereses: 
                                 <br />
-                                <span class="text-black">$ 17,800</span></p>
-                            <p class="text-gray-600"><strong>Abono a capital: </strong>
-                                <br />
-                                <span class="text-black">$ 13,359</span></p>
-                            <p class="text-gray-600"><strong>Seguro de Vida: </strong>
-                                <br />
-                                <span class="text-black">$ 1,393</span></p>
+                                <span class="text-black">$ <%= abonoInteres %></span></p>
+                            <p class="text-gray-600">Abono a capital: <br />$ <%= abonoCapital %></p>
+                            <p class="text-gray-600">Seguro de Vida: <br />$ <%= seguroDeVida %></p>
                         </th>
                         <th>
                             <p class="text-gray-600">&nbsp;</p>
                             <p class="text-gray-600">&nbsp;</p>
-                            <p class="text-gray-600"><strong>Saldo </strong>
-                            <br />
-                            <span class="text-black">$ 1,000,000</span></p>
+                            <p class="text-gray-600"><strong>Saldo </strong><br /><span class="text-black">$ <%= saldoRestante %></span></p>
                         </th>
                     </tr>
                 </table>
             </div>
             </td>
-            <% } %>
+            <% saldoRestante -= abonoCapital;
+                } %>
 		<td class="auto-style3" ></td>
 	</tr>
 </table>
