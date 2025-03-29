@@ -26,7 +26,7 @@
         int valorPrestamo = 1000000;
         int numeroDeCuotas = 48;
         %>
-        <asp:Button ID="PaginaAnterior" runat="server" BackColor="#99CCFF" BorderColor="Blue" Font-Size="Medium" Text="Atras" />
+        <asp:Button ID="PaginaAnterior" runat="server" BackColor="#99CCFF" BorderColor="Blue" Font-Size="Large" Text="Atras" />
         <table id="PlanDePago" style="height:60px;width:100%;">
             <tr align="center" valign="middle">
                 <td align="center" valign="middle" style="color:Black;font-size:XX-Large;font-weight:bold;">Plan de Pagos</td>
